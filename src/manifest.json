@@ -1,0 +1,35 @@
+{
+  "name": "Link Mark",
+  "version": "1.0",
+  "homepage_url":"http://192.168.1.6:3000",
+  "description": "Link Mark ,a Collection BookMarks Tool",
+  "permissions": ["activeTab", "declarativeContent", "storage","contextMenus","bookmarks"],
+  "options_page": "view/options.html",
+  "background": {
+    "scripts": ["js/jquery-3.4.0.js","js/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title":"Link Mark",
+    "default_icon": {
+      "16": "icons/16_16.png",
+      "32": "icons/32_32.png",
+      "48": "icons/48_48.png",
+      "128": "icons/128_128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16_16.png",
+    "32": "icons/32_32.png",
+    "48": "icons/48_48.png",
+    "128": "icons/128_128.png"
+  }, 
+  "content_scripts": [
+    {
+      "matches" : ["http://*/*", "https://*/*"],
+      "js": ["js/contentScript.js"],
+      "css": ["css/index.css"]
+    }
+  ],
+  "manifest_version": 2
+}
